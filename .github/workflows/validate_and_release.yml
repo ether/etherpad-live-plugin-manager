@@ -67,6 +67,6 @@ jobs:
               ${{ runner.os }}-pnpm-store-
     - run: pnpm i
     - run: pnpm run src-build
-    - run: pnpm publish
+    - run: npm publish
       env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
