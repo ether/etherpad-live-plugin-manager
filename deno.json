@@ -1,5 +1,8 @@
 {
   "name": "@etherpad/live-plugin-manager",
   "version": "0.18.1",
-  "exports": "./index.ts"
+  "exports": "./index.ts",
+  "publish": {
+    "include": ["./dist/**/*", "./package.json", "./README.md", "./LICENSE"]
+  }
 }
