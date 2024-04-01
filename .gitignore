@@ -39,3 +39,5 @@ plugin_packages
 
 .vscode
 .DS_Store
+.idea
+dist
