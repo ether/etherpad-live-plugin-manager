@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20,21]
+        node-version: [21]
 
     steps:
     - uses: actions/checkout@v4
@@ -37,8 +37,6 @@ jobs:
             key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
             restore-keys: |
               ${{ runner.os }}-pnpm-store-
-    - name: Only install direct dependencies
-      run: pnpm config set auto-install-peers false
     - run: pnpm i
     - run: pnpm run src-build
     - run: pnpm run test
@@ -66,8 +64,6 @@ jobs:
             key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
             restore-keys: |
               ${{ runner.os }}-pnpm-store-
-    - name: Only install direct dependencies
-      run: pnpm config set auto-install-peers false
     - run: pnpm i
     - run: pnpm run src-build
     - run: pnpm publish
