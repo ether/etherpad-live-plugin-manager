@@ -80,4 +80,4 @@ jobs:
     - name: Push changes
       run: git push --follow-tags
     - name: Publish package
-      run: npx jsr publish
+      run: npx jsr publish --config package.json
