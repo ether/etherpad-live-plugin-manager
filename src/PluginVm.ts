@@ -1,7 +1,7 @@
-import * as vm from "vm";
+import * as vm from "node:vm";
 import * as fs from "fs-extra";
-import * as path from "path";
-import * as console from "console";
+import * as path from "node:path";
+import * as console from "node:console";
 import {PluginManager} from "./PluginManager";
 import {IPluginInfo} from "./PluginInfo";
 import Debug from "debug";

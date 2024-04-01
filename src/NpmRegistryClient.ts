@@ -1,5 +1,5 @@
-import urlJoin = require("url-join");
-import * as path from "path";
+import urlJoin from "url-join";
+import * as path from "node:path";
 import * as fs from "./fileSystem";
 import { downloadTarball, extractTarball } from "./tarballUtils";
 import * as semVer from "semver";

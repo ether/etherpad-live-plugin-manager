@@ -1,5 +1,5 @@
 {
-  "name": "etherpad-live-plugin-manager",
+  "name": "@etherpad/live-plugin-manager",
   "version": "0.18.1",
   "description": "Install and uninstall any node package at runtime from npm registry",
   "keywords": [
@@ -8,6 +8,7 @@
     "npm",
     "install"
   ],
+  "exports": "./index.ts",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {

@@ -1,4 +1,4 @@
-import * as path from "path";
+import * as path from "node:path";
 import * as fs from "./fileSystem";
 import {Headers, headersBasicAuth, httpJsonGet} from "./httpUtils";
 import Debug from "debug";
