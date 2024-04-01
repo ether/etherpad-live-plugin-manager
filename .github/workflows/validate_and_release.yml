@@ -43,7 +43,8 @@ jobs:
     - run: pnpm run test
   release:
     permissions:
-      contents: read
+      packages: write
+      contents: write
       id-token: write
     if: github.ref == 'refs/heads/master'
     needs: build
@@ -71,5 +72,9 @@ jobs:
               ${{ runner.os }}-pnpm-store-
     - run: pnpm i
     - run: pnpm run src-build
+    - name: Bump version
+      run: pnpm version patch
+    - name: Push changes
+      run: git push --follow-tags
     - name: Publish package
       run: npx jsr publish
