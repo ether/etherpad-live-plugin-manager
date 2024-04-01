@@ -73,7 +73,13 @@ jobs:
     - run: pnpm i
     - run: pnpm run src-build
     - name: Bump version
-      run: pnpm version patch
+      run: |
+        LATEST_TAG=$(git describe --tags --abbrev=0) || exit 1
+        NEW_COMMITS=$(git rev-list --count "${LATEST_TAG}"..) || exit 1
+        [ "${NEW_COMMITS}" -gt 0 ] || exit 0
+        git config user.name 'github-actions[bot]'
+        git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+        pnpm version patch
     - name: Push changes
       run: git push --follow-tags
     - name: Publish package
