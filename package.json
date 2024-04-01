@@ -1,6 +1,6 @@
 {
   "name": "@etherpad/live-plugin-manager",
-  "version": "0.18.2",
+  "version": "0.18.3",
   "description": "Install and uninstall any node package at runtime from npm registry",
   "keywords": [
     "plugin",
