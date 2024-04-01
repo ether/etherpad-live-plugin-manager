@@ -44,6 +44,7 @@ export async function httpJsonGet<T>(sourceUrl: string, headers?: Headers): Prom
 		throw new Error(`Response error ${res.status} ${res.statusText}`);
 	}
 
+	// @ts-ignore
 	return res.json();
 }
 
@@ -64,9 +65,9 @@ export async function httpDownload(sourceUrl: string, destinationFile: string, h
 
 	return new Promise<void>((resolve, reject) => {
 		const fileStream = fs.createWriteStream(destinationFile);
-		res.body.pipe(fileStream);
+		res.body!.pipe(fileStream);
 
-		res.body.on("error", (err) => {
+		res.body!.on("error", (err) => {
 			fileStream.close();
 			fs.fileExists(destinationFile)
 				.then(fExist => {
