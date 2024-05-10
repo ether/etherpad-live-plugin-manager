@@ -53,7 +53,7 @@
     "lockfile": "^1.0.4",
     "node-fetch": "^2.6.6",
     "proxy-agent": "^6.4.0",
-    "semver": "^7.3.5",
+    "semver": "^7.6.2",
     "tar": "^6.1.11",
     "url-join": "^4.0.1"
   }
